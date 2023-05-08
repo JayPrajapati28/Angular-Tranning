@@ -1,0 +1,70 @@
+<!-- 
+<h3>This is one way data binding  !!</h3>
+<p>{{test}}</p>
+<h4>Two way data binding</h4>
+<input [(ngModel)]="x">
+<button (click)="onClick()">Click</button>
+<p>This is the the x value {{x}}</p>
+
+<input type="text" [value]="name"  [disabled]=diseble />
+<button (click)="onClick()" >ClickDis</button> -->
+
+<br />
+<input type="checkbox" [(ngModel)]="isChecked1"> <label>Jay</label>
+<input type="checkbox" [(ngModel)]="isChecked2"> <label>Karn</label>
+<input type="checkbox" [(ngModel)]="isChecked3"> <label>Prince</label>
+
+<p *ngIf="isChecked1">{{ label1 }}</p> 
+<p *ngIf="isChecked2">{{ label2 }}</p> 
+<p *ngIf="isChecked3">{{ label3 }}</p>
+
+<br/>
+<input type="radio" name ="radio" value="Ronald" [(ngModel)]="selected"> <label>Ronald</label>
+<input type="radio" name ="radio" value="Messi" [(ngModel)]="selected"> <label>Messi</label>
+<input type="radio" name ="radio" value="Naimar" [(ngModel)]="selected"> <label>Naimar</label>
+<p>{{selected}}</p>
+
+<br/>
+<p>NgModel object</p>
+
+<label for="name">Name:</label>
+<input type="text" [(ngModel)]="ngModelObject.Name" >
+
+<br/>
+<label>Gender:</label>
+    <input type="radio" name="gender-male" value="Male" [(ngModel)]="ngModelObject.gender" >
+    <label>Male</label>
+    <input type="radio" name="gender-female" value="Female" [(ngModel)]="ngModelObject.gender">
+    <label>Female</label>
+<br/>    
+<label>Age:</label>
+<input type="number" [(ngModel)]="ngModelObject.age" min="1" max="5"/>
+
+<br/> 
+<label>Gmail:</label>
+<input type="text" [(ngModel)]="ngModelObject.gmail"/>
+
+
+<p>Name : {{ngModelObject.Name}}</p>
+<p>Gender:{{ngModelObject.gender}}</p>
+<p>Age : {{ngModelObject.age}}</p>
+<p>Gmail:{{ngModelObject.gmail}}</p>
+<h3>Table using NgFor and NgIf</h3>
+
+<input type="checkbox" value="Age" [(ngModel)]="isAge" /><label>Age</label>
+<input type="radio" value="Male" [(ngModel)]="selectedVale" (change)="filterVale()" name="gender"/><label>Male</label>
+<input type="radio" value ="Female" [(ngModel)]="selectedVale" (change)="filterVale()"  name="gender"/><label>Female</label>
+<input type="radio" value ="All" [(ngModel)]="selectedVale" (change)="filterVale()"  name="gender"/><label>All</label>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th *ngIf="isAge">Age</th>
+        <th>Gender</th>
+    </tr>
+    <tr *ngFor="let ele of data"[ngStyle]="{'background-color':ele.gender === 'Male' ? 'green' : 'pink' }">
+        <td>{{ele.name}}</td>
+        <td *ngIf="isAge">{{ele.age}}</td>
+        <td >{{ele.gender}}</td>
+    </tr>
+</table>
+
