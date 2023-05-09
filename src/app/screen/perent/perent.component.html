@@ -1,0 +1,19 @@
+<!-- <p>perent works!</p>
+<input type="text" [(ngModel)]="name">
+<p>{{name}}</p> -->
+
+<!-- <app-child [item]="currentItem" (newItem)="addItem($event)"></app-child> -->
+<!-- <h4>This is form child to perent!!</h4>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul> -->
+<!-- <p>{{name}}</p> -->
+
+<h2>This is the perent component!!</h2>
+<app-child (updateDataEvent)="updateData($event)"></app-child>
+<p>{{value}}</p>
+
+<h3>Reference Variable</h3>
+<input type="text" #box name="Jay" placeholder="test">
+<button (click)="getVal(box.placeholder)">Call Function </button>
+
